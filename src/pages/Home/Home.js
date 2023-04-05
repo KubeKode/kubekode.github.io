@@ -1,8 +1,10 @@
+import Data from "./data";
+import "./Home.css"
 const HomePage = () => {
-  return <div>
-    <h1>
-        Home
-    </h1>
-  </div>;
+  return (
+    <div className="homepagedata">
+      <Data />
+    </div>
+  );
 };
 export default HomePage;
