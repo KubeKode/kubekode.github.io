@@ -8,9 +8,16 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 import MenuItem from "@mui/material/MenuItem";
 
-const pages = ["Home", "About", "Courses", "Blog", "Partner"];
+const pages = [
+  { label: "Home", link: "/#/" },
+  { label: "About", link: "/about" },
+  { label: "Courses", link: "/courses" },
+  { label: "Blog", link: "/blog" },
+  { label: "Partner", link: "/partner" },
+];
 
 function ResponsiveAppBar({ Logo }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -23,24 +30,27 @@ function ResponsiveAppBar({ Logo }) {
   };
 
   return (
-    <AppBar position="static" sx={{background: '#222223', borderBottom:'1px solid #4d4d4de3'}}>
+    <AppBar
+      position="fixed"
+      sx={{ background: "rgb(13 17 22)", padding: "15px", boxShadow: "none" }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        <Logo sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-        <Typography
+          <Logo sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <Typography
             variant="h5"
             noWrap
             component="a"
             href=""
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
+              display: { xs: "none", md: "flex" },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
             KubeKode
@@ -74,15 +84,26 @@ function ResponsiveAppBar({ Logo }) {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map(({ label, link }) => (
+                <MenuItem key={label} onClick={handleCloseNavMenu}>
+                  <Link to={link} style={{textDecoration:"none"}}>
+                    <Typography
+                      textAlign="center"
+                      sx={{
+                        fontFamily: "PT Sans, sans-serif",
+                        fontWeight: 700,
+                        color: "inherit",
+                        textDecoration: "none",
+                      }}
+                    >
+                      {label}
+                    </Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <Logo sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }}
-          />
+          <Logo sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -90,25 +111,43 @@ function ResponsiveAppBar({ Logo }) {
             href=""
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
             }}
           >
             KubeKode
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" },justifyContent: 'flex-end'  }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              justifyContent: "flex-end",
+            }}
+          >
             {pages.map((page) => (
               <Button
-                key={page}
+                key={page.label}
+                component={Link}
+                to={page.link}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
-                {page}
+                <Typography
+                  textAlign="center"
+                  sx={{
+                    fontFamily: "PT Sans, sans-serif",
+                    fontWeight: 700,
+                    color: "inherit",
+                    textDecoration: "none",
+                  }}
+                >
+                  {page.label}
+                </Typography>
               </Button>
             ))}
           </Box>
