@@ -12,11 +12,11 @@ import { Link } from "react-router-dom";
 import MenuItem from "@mui/material/MenuItem";
 
 const pages = [
-  { label: "Home", link: "/#/" },
-  { label: "About", link: "/about" },
-  { label: "Courses", link: "/courses" },
-  { label: "Blog", link: "/blog" },
-  { label: "Partner", link: "/partner" },
+  { label: "Home", link: "/#/", special: false },
+  { label: "About", link: "/about", special: false },
+  { label: "Courses", link: "/courses", special: false },
+  { label: "Blog", link: "/blog", special: false },
+  { label: "Partner >", link: "/partner", special: true },
 ];
 
 function ResponsiveAppBar({ Logo }) {
@@ -53,7 +53,7 @@ function ResponsiveAppBar({ Logo }) {
               textDecoration: "none",
             }}
           >
-            KubeKode
+            <span style={{ color: "rgb(127 176 255)" }}>Kube</span>Kode
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -86,7 +86,7 @@ function ResponsiveAppBar({ Logo }) {
             >
               {pages.map(({ label, link }) => (
                 <MenuItem key={label} onClick={handleCloseNavMenu}>
-                  <Link to={link} style={{textDecoration:"none"}}>
+                  <Link to={link} style={{ textDecoration: "none" }}>
                     <Typography
                       textAlign="center"
                       sx={{
@@ -135,7 +135,12 @@ function ResponsiveAppBar({ Logo }) {
                 component={Link}
                 to={page.link}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  backgroundColor: page.special ? "#2f74e5" : "transparent",
+                }}
               >
                 <Typography
                   textAlign="center"
