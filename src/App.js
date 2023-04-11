@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Header from "./components/Header";
 
-
 function App() {
   return (
     <Router>
@@ -15,6 +14,9 @@ function App() {
           <Route path="/about" Component={About} />
         </Routes>
       </div>
+
+
+      
     </Router>
   );
 }

@@ -4,6 +4,16 @@ const Data = () => {
       <h1 id="kubekode-your-go-to-source-for-devops-and-cloud-technology">
         KubeKode - Your Go-To Source for DevOps and Cloud Technology
       </h1>
+      {/* <div style={{ padding: "75% 0 0 0", position: "relative" }}>
+        <iframe
+          src="https://player.vimeo.com/video/816027625?h=d1f9eb4e88&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          style={{position:"absolute",top:0,left:0,width:'100%',height:'100%'}}
+          title="logo (online-video-cutter.com).mp4"
+        ></iframe>
+      </div> */}
       <p>
         Welcome to KubeKode, where we are passionate about educating and
         empowering individuals to become proficient in the latest DevOps and
