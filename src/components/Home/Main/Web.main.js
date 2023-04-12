@@ -34,7 +34,7 @@ const FullMain = () => {
           >
             Empowering <span style={{ color: "rgb(127 176 255)" }}>Minds </span>
             <br />
-            <span style={{ color: "rgb(127 176 255)" }}>Transforming</span>{" "}
+            <span style={{ color: "#8c85fa" }}>Transforming</span>{" "}
             Businesses
           </Typography>
           <Typography
