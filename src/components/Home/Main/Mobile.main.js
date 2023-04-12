@@ -1,8 +1,10 @@
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import { CardMedia } from "@mui/material";
+import { Button,CardMedia } from "@mui/material";
 import maingif from "../../../assets/Snap.png";
 import styles from "./mobile.main.module.css";
+import { Link } from "react-router-dom";
+import SocialIcons from "../SocialBar";
 const MobileMain = () => {
   return (
     <Box
@@ -18,7 +20,7 @@ const MobileMain = () => {
         <Typography
           variant="h4"
           sx={{
-            fontFamily: "monospace",
+            fontFamily: "'Poppins', sans-serif",
             fontWeight: 700,
             color: "inherit",
           }}
@@ -39,8 +41,22 @@ const MobileMain = () => {
           }}
         >
           Showcase your skills with practical development experience and land
-          the coding career of your dreams
+          the coding career of your dreams.
         </Typography>
+        <SocialIcons />
+        <Button
+          component={Link}
+          to="/courses"
+          sx={{
+            my: 2,
+            color: "white",
+            backgroundColor: "#2f74e5",
+            borderRadius: "20px",
+            fontWeight: "bolder",
+          }}
+        >
+          Explore courses
+        </Button>
       </div>
       <div className={styles.child}>
         <CardMedia
@@ -50,6 +66,7 @@ const MobileMain = () => {
           sx={{
             boxShadow:
               "3px 2px 10px 4px rgba(0,0,0,0.2), 0px 4px 10px 0px rgba(0,0,0,0.14), 0px 1px 20px 0px rgba(0,0,0,0.12)",
+            width: "90%",
           }}
         />
       </div>
