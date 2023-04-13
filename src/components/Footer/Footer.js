@@ -14,6 +14,7 @@ const Footer = () => {
         position: "relative",
         bottom: 0,
         width: "100vw",
+        marginTop: "120px",
       }}
     >
       <div>
