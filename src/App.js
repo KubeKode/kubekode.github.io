@@ -1,9 +1,9 @@
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
-import About from "./pages/About";
+import Courses from "./pages/Courses";
 import Header from "./components/Header";
-
+import Footer from "./components/Footer";
 function App() {
   return (
     <Router>
@@ -11,12 +11,10 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" Component={Home} />
-          <Route path="/about" Component={About} />
+          <Route path="/courses" Component={Courses} />
         </Routes>
       </div>
-
-
-      
+      <Footer />      
     </Router>
   );
 }

@@ -1,52 +1,36 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import { Container, Typography, Link } from "@material-ui/core";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import TwitterIcon from "@material-ui/icons/Twitter";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: '#0b0e13',
-    padding: theme.spacing(3, 2),
-    marginTop: "auto",
-    position: 'relative',
-    bottom: 0
-  },
-  link: {
-    margin: theme.spacing(0, 1),
-  },
-}));
-
-function FooterPage() {
-  const classes = useStyles();
+import { Typography, Box } from "@mui/material";
+import SocialIcons from "../Home/SocialBar";
+const Footer = () => {
   return (
-    <footer className={classes.root}>
-      <Container maxWidth="md">
-        <Typography variant="body1" color="textSecondary" align="center">
-          © 2023 My Website
+    <Box
+      sx={{
+        bgcolor: "#0d1117",
+        py: 3,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: { xs: "column", md: "row" },
+        position: "relative",
+        bottom: 0,
+        width: "100vw",
+      }}
+    >
+      <div>
+        <Typography
+          variant="subtitle1"
+          align="center"
+          sx={{ color: "white", mb: { xs: 1, md: 0 }, mr: { md: 2 } }}
+        >
+          © 2023 Kubekode. All rights reserved.
         </Typography>
-        <Typography variant="body2" color="textSecondary" align="center">
-          Built with React and Material UI
+        <Typography variant="subtitle1" align="center" sx={{ color: "white" }}>
+          Contact us at kubekode@gmail.com
         </Typography>
-        <Typography variant="body2" color="textSecondary" align="center">
-          <Link href="#" className={classes.link}>
-            Privacy Policy
-          </Link>
-          <Link href="#" className={classes.link}>
-            Terms of Use
-          </Link>
-        </Typography>
-        <Typography variant="body2" color="textSecondary" align="center">
-          <Link href="#" className={classes.link}>
-            <GitHubIcon />
-          </Link>
-          <Link href="#" className={classes.link}>
-            <TwitterIcon />
-          </Link>
-        </Typography>
-      </Container>
-    </footer>
+        <SocialIcons />
+      </div>
+    </Box>
   );
-}
+};
 
-export default FooterPage;
+export default Footer;

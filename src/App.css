@@ -1,6 +1,7 @@
 .App {
   position: relative;
   top: 100px;
+  bottom: 100px;
 }
 .App-logo {
   height: 40vmin;
