@@ -33,6 +33,7 @@ function Categories() {
               className={styles.links}
               href="https://youtube.com/playlist?list=PL5jQH1Kzu9zrku-uqq-qT1hMzLsYgzW5N"
               target="_blank"
+              rel="noreferrer"
             >
               Docker Mastery
             </a>
@@ -41,7 +42,7 @@ function Categories() {
             <a
               className={styles.links}
               href="https://youtube.com/playlist?list=PL5jQH1Kzu9zqraQoXA8rYc3WPB_gnwwJp"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               GitHub Actions
             </a>
@@ -50,7 +51,7 @@ function Categories() {
             <a
               className={styles.links}
               href="https://www.youtube.com/playlist?list=PL5jQH1Kzu9zpH-T9-z-cdrUEIsvLLRzUY"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               DevOps Projects
             </a>
@@ -64,7 +65,7 @@ function Categories() {
             <a
               className={styles.links}
               href="http://kubekode.org/#/about"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               About KubeKode
             </a>
@@ -73,7 +74,7 @@ function Categories() {
             <a
               className={styles.links}
               href="http://kubekode.org/#/contact"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               Contact Us
             </a>
@@ -82,7 +83,7 @@ function Categories() {
             <a
               className={styles.links}
               href="http://kubekode.org/#/services"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               Services
             </a>
@@ -103,7 +104,7 @@ function Categories() {
             <a
               className={styles.links}
               href="http://kubekode.org/#/services"
-              target="_blank"
+              target="_blank" rel="noreferrer"
             >
               Youtube Videos
             </a>
