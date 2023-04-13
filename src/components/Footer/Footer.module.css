@@ -1,0 +1,29 @@
+.copyright {
+  border-top: 1px solid #3c3b3b54;
+  display: flex;
+  width: 90%;
+  justify-content: space-between;
+}
+.copyright_right_child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.copyright_left_child {
+  display: flex;
+}
+.socialBar {
+  margin-left: auto;
+}
+.links{
+  text-decoration: none;
+  color: #c5d1e4;
+}
+.links:hover{
+  color: rgb(182, 181, 181);
+}
+@media (max-width: 600px) {
+  .copyright {
+    flex-direction: column;
+  }
+}

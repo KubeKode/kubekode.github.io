@@ -1,4 +1,5 @@
 import FooterPage from "./Footer";
+
 const Footer = () => {
   return <FooterPage />;
 };
