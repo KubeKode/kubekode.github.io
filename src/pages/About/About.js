@@ -1,8 +1,9 @@
+import Main from "../../components/About/Main";
 const AboutPage = () => {
-    return <div>
-      <h1>
-          About
-      </h1>
-    </div>;
-  };
-  export default AboutPage;
+  return (
+    <div className="homepagedata">
+      <Main />
+    </div>
+  );
+};
+export default AboutPage;
