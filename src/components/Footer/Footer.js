@@ -1,6 +1,7 @@
 import React from "react";
-import { Typography, Box } from "@mui/material";
-import SocialIcons from "../Home/SocialBar";
+import { Box } from "@mui/material";
+import Copyright from "./Copyright";
+import Categories from "./Categories";
 const Footer = () => {
   return (
     <Box
@@ -10,26 +11,17 @@ const Footer = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        flexDirection: { xs: "column", md: "row" },
+        flexDirection: "column",
         position: "relative",
         bottom: 0,
         width: "100vw",
         marginTop: "120px",
+        color: "white",
+        borderTop: "1px solid #3c3b3b54"
       }}
     >
-      <div>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          sx={{ color: "white", mb: { xs: 1, md: 0 }, mr: { md: 2 } }}
-        >
-          © 2023 Kubekode. All rights reserved.
-        </Typography>
-        <Typography variant="subtitle1" align="center" sx={{ color: "white" }}>
-          Contact us at kubekode@gmail.com
-        </Typography>
-        <SocialIcons />
-      </div>
+      <Categories />
+      <Copyright />
     </Box>
   );
 };
