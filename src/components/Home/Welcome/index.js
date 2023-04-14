@@ -9,7 +9,7 @@ const Welcome = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        flexDirection: "column"
+        flexDirection: "column",
       }}
     >
       <Intro />
