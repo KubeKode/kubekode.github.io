@@ -1,11 +1,11 @@
 import ReactPlayer from "react-player";
-import styles from "./welcome.module.css";
-const Video = () => {
+import styles from "./player.module.css";
+const Video = ({videoLink}) => {
   return (
     <div className={styles.player_wrapper}>
       <ReactPlayer
-        url="https://www.youtube.com/watch?v=p9hyNWXAC1c"
-        // playing
+        url={videoLink}
+        playing
         width="100%"
         height="100%"
         style={{

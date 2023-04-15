@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import { Button, CardMedia } from "@mui/material";
 import maingif from "../../../assets/Snap.png";
 import styles from "./web.main.module.css";
-import SocialIcons from "../SocialBar";
+import SocialIcons from "../../SocialBar";
 import { Link } from "react-router-dom";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 

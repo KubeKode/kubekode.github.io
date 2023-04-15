@@ -1,5 +1,5 @@
 import { Typography } from "@mui/material";
-import SocialIcons from "../Home/SocialBar";
+import SocialIcons from "../SocialBar";
 import styles from "./Footer.module.css";
 const Copyright = () => {
   return (

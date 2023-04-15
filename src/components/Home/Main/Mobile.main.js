@@ -4,7 +4,7 @@ import { Button, CardMedia } from "@mui/material";
 import maingif from "../../../assets/Snap.png";
 import styles from "./mobile.main.module.css";
 import { Link } from "react-router-dom";
-import SocialIcons from "../SocialBar";
+import SocialIcons from "../../SocialBar";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const MobileMain = () => {

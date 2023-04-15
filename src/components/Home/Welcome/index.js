@@ -1,4 +1,4 @@
-import Video from "./Video";
+import VideoPlayer from "../../VideoPlayer";
 import Intro from "./Intro";
 import { Box } from "@mui/material";
 const Welcome = () => {
@@ -13,7 +13,7 @@ const Welcome = () => {
       }}
     >
       <Intro />
-      <Video />
+      <VideoPlayer videoLink="https://www.youtube.com/watch?v=p9hyNWXAC1c" />
     </Box>
   );
 };

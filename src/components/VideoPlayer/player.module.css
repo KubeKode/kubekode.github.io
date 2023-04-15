@@ -1,0 +1,25 @@
+.player_wrapper {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 403px;
+  }
+  @media only screen and (max-width: 600px) {
+    .player_wrapper {
+      width: 85vw;
+      height: 187px;
+    }
+  }
+  @media (min-width: 1540px) {
+    .player_wrapper {
+      width: 50vw;
+      height: 540px;
+    }
+  }
+  .player__container {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+  }
+  

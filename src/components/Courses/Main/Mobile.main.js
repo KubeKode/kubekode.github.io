@@ -2,7 +2,6 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { Button, CardMedia } from "@mui/material";
 import maingif from "../../../assets/aboutmain.png";
-import styles from "./main.module.css";
 import { Link } from "react-router-dom";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
@@ -17,7 +16,7 @@ const MobileMain = () => {
         width: "100vw",
       }}
     >
-      <div className={styles.child}>
+      <div>
         <AnimationOnScroll
           animateIn="animate__bounceInLeft"
           animateOut="animate__bounceOutLeft"
@@ -85,7 +84,7 @@ const MobileMain = () => {
         </AnimationOnScroll>
       </div>
 
-      <div className={styles.child}>
+      <div>
         <AnimationOnScroll
           animateIn="animate__bounceInRight"
           animateOut="animate__bounceOutRight"
