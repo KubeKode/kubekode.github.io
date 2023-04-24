@@ -1,37 +1,22 @@
 import { Grid, Container } from "@mui/material";
 import CourseCard from "./CourseCard";
-const cardsData = [
-  {
-    title: "Card 1",
-    image: "https://source.unsplash.com/random/300x200",
-    content: "Lorem ipsum dolor sit amet.",
-    link: "",
-  },
-  {
-    title: "Card 2",
-    image: "https://source.unsplash.com/random/300x200",
-    content: "Consectetur adipiscing elit.",
-    link: "",
-  },
-  {
-    title: "Card 3",
-    image: "https://source.unsplash.com/random/300x200",
-    content: "Sed do eiusmod tempor incididunt.",
-    link: "",
-  },
-  {
-    title: "Card 4",
-    image: "https://source.unsplash.com/random/300x200",
-    content: "Ut labore et dolore magna aliqua.",
-    link: "",
-  },
-];
+import { useEffect, useState } from "react";
 
 const CardsList = () => {
+  const [courses, setCourses] = useState([]);
+  const apiUrl = "https://script.googleusercontent.com/macros/echo?user_content_key=gYPjuEIsMInkIbuuL03uZfJkR32Nr_Qa7u0C2KbFfiE1Qa3vqlsA3-j-73e465jj65SnmjQqCx3Pxz1m7Mz-8VqHfVvj7tWim5_BxDlH2jW0nuo2oDemN9CCS2h10ox_1xSncGQajx_ryfhECjZEnLuUF7Z_-YWgZ9b5rXgJdXzfMrEGX0pdamPGVLCcN92de-W0SactNBfoEaVcVxDHGMyfzpMakdoMsZK7EmedLNfacBGtODc9ltz9Jw9Md8uu&lib=MXtcx8t5MfxcgoPV7nkaC8iD3pa3g3bgM"
+  const getData = async () => {
+    const apiData = await fetch(apiUrl);
+    const data = await apiData.json();
+    setCourses(data.data);
+  };
+  useEffect(() => {
+    getData();
+  });
   return (
     <Container maxWidth={{ xs: "xs", lg: "lg" }}>
       <Grid container spacing={2}>
-        {cardsData.map((card, index) => (
+        {courses.map((card, index) => (
           <CourseCard
             title={card.title}
             link={card.link}
