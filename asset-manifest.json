@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/kubekode.github.io/static/css/main.be0abb8d.css",
-    "main.js": "/kubekode.github.io/static/js/main.8e60801f.js",
+    "main.css": "/kubekode.github.io/static/css/main.bdddba7a.css",
+    "main.js": "/kubekode.github.io/static/js/main.dce2ee2d.js",
     "static/js/787.16f51474.chunk.js": "/kubekode.github.io/static/js/787.16f51474.chunk.js",
     "static/media/aboutmain.png": "/kubekode.github.io/static/media/aboutmain.f42e523bc8afaac01ca1.png",
     "static/media/Snap.png": "/kubekode.github.io/static/media/Snap.c2ea3b17d94882585491.png",
     "static/media/logo.png": "/kubekode.github.io/static/media/logo.6c5a43d1c771832490b8.png",
     "index.html": "/kubekode.github.io/index.html",
-    "main.be0abb8d.css.map": "/kubekode.github.io/static/css/main.be0abb8d.css.map",
-    "main.8e60801f.js.map": "/kubekode.github.io/static/js/main.8e60801f.js.map",
+    "main.bdddba7a.css.map": "/kubekode.github.io/static/css/main.bdddba7a.css.map",
+    "main.dce2ee2d.js.map": "/kubekode.github.io/static/js/main.dce2ee2d.js.map",
     "787.16f51474.chunk.js.map": "/kubekode.github.io/static/js/787.16f51474.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.be0abb8d.css",
-    "static/js/main.8e60801f.js"
+    "static/css/main.bdddba7a.css",
+    "static/js/main.dce2ee2d.js"
   ]
 }
