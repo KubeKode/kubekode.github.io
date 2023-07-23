@@ -112,7 +112,7 @@ function ResponsiveAppBar({ Logo }) {
               {isAuthenticated ? (
                 <Button
                   color="inherit"
-                  href="/login"
+                  href=""
                   onClick={() => logoutWithRedirect()}
                 >
                   Logout
