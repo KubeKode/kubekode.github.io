@@ -10,6 +10,7 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import MenuItem from "@mui/material/MenuItem";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const pages = [
   { label: "Home", link: "/#/", special: false },
@@ -21,6 +22,13 @@ const pages = [
 
 function ResponsiveAppBar({ Logo }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const logoutWithRedirect = () =>
+    logout({
+      logoutParams: {
+        returnTo: window.location.origin,
+      },
+    });
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -101,6 +109,23 @@ function ResponsiveAppBar({ Logo }) {
                   </Link>
                 </MenuItem>
               ))}
+              {isAuthenticated ? (
+                <Button
+                  color="inherit"
+                  href="/login"
+                  onClick={() => logoutWithRedirect()}
+                >
+                  Logout
+                </Button>
+              ) : (
+                <Button
+                  color="inherit"
+                  href="/login"
+                  onClick={() => loginWithRedirect()}
+                >
+                  Login
+                </Button>
+              )}
             </Menu>
           </Box>
           <Logo sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
@@ -155,6 +180,56 @@ function ResponsiveAppBar({ Logo }) {
                 </Typography>
               </Button>
             ))}
+            {isAuthenticated ? (
+                <Button
+                  color="inherit"
+                  href="/login"
+                  onClick={() => logoutWithRedirect()}
+                  sx={{
+                    my: 2,
+                    ml: 2,
+                    color: "white",
+                    display: "block",
+                  }}
+                >
+                 <Typography
+                  textAlign="center"
+                  sx={{
+                    fontFamily: "PT Sans, sans-serif",
+                    fontWeight: 700,
+                    color: "inherit",
+                    textDecoration: "none",
+                  }}
+                >
+                  Log Out
+                </Typography>
+                </Button>
+              ) : (
+                <Button
+                  color="inherit"
+                  href="/login"
+                  onClick={() => loginWithRedirect()}
+                  sx={{
+                    my: 2,
+                    ml: 2,
+                    color: "white",
+                    display: "block",
+                    backgroundColor:  "#362dbb",
+                  }}
+                >
+                 <Typography
+                  textAlign="center"
+                  sx={{
+                    fontFamily: "PT Sans, sans-serif",
+                    fontWeight: 700,
+                    color: "inherit",
+                    textDecoration: "none",
+                  }}
+                >
+                  Login
+                </Typography>
+                </Button>
+              )}
           </Box>
         </Toolbar>
       </Container>

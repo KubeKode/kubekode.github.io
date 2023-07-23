@@ -3,7 +3,9 @@ on:
   push:
     branches:
       - "dev"
-
+env:
+  REACT_APP_AUTH0_CLIENT_ID: ${{ secrets.REACT_APP_AUTH0_CLIENT_ID }}
+  REACT_APP_AUTH0_DOMAIN: ${{ secrets.REACT_APP_AUTH0_DOMAIN }}
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
