@@ -22,7 +22,7 @@ const pages = [
 
 function ResponsiveAppBar({ Logo }) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const { user, isAuthenticated, loginWithRedirect, logout } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
   const logoutWithRedirect = () =>
     logout({
       logoutParams: {
