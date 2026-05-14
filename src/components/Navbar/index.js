@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
+import { auth, signOut } from '../../lib/firebase';
 
 const navLinks = [
   { label: 'Courses', path: '/courses' },
@@ -10,6 +12,15 @@ const navLinks = [
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { user } = useAuth();
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    setMobileOpen(false);
+  };
+
+  const displayName = user?.displayName || user?.email?.split('@')[0] || '';
+  const initials = displayName.slice(0, 2).toUpperCase();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-dark-900/80 backdrop-blur-md border-b border-white/5">
@@ -33,22 +44,50 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex items-center gap-4">
-          <button className="text-gray-300 hover:text-white transition-colors">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-          </button>
-          <button className="text-gray-300 hover:text-white transition-colors">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-            </svg>
-          </button>
-          <Link
-            to="/signup"
-            className="bg-brand-blue hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
-          >
-            Explore Now
-          </Link>
+          {user ? (
+            <>
+              <Link
+                to="/dashboard"
+                className="text-sm text-gray-300 hover:text-white transition-colors"
+              >
+                Dashboard
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                Logout
+              </button>
+              <Link to="/dashboard" className="ml-1">
+                {user.photoURL ? (
+                  <img
+                    src={user.photoURL}
+                    alt={displayName}
+                    className="w-8 h-8 rounded-full border border-white/10"
+                  />
+                ) : (
+                  <div className="w-8 h-8 rounded-full bg-brand-blue/20 border border-brand-blue/30 flex items-center justify-center text-brand-blue text-xs font-bold">
+                    {initials}
+                  </div>
+                )}
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/signin"
+                className="text-sm text-gray-300 hover:text-white transition-colors"
+              >
+                Sign In
+              </Link>
+              <Link
+                to="/signup"
+                className="bg-brand-blue hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+              >
+                Join KubeKode
+              </Link>
+            </>
+          )}
         </div>
 
         <button
@@ -77,13 +116,41 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <Link
-            to="/signup"
-            className="block bg-brand-blue text-white text-sm font-medium px-4 py-2 rounded-lg text-center mt-3"
-            onClick={() => setMobileOpen(false)}
-          >
-            Explore Now
-          </Link>
+
+          {user ? (
+            <>
+              <Link
+                to="/dashboard"
+                className="block text-sm text-gray-300 hover:text-white transition-colors"
+                onClick={() => setMobileOpen(false)}
+              >
+                Dashboard
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="block w-full text-left text-sm text-red-400 hover:text-red-300 transition-colors"
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/signin"
+                className="block text-sm text-gray-300 hover:text-white transition-colors"
+                onClick={() => setMobileOpen(false)}
+              >
+                Sign In
+              </Link>
+              <Link
+                to="/signup"
+                className="block bg-brand-blue text-white text-sm font-medium px-4 py-2 rounded-lg text-center mt-3"
+                onClick={() => setMobileOpen(false)}
+              >
+                Join KubeKode
+              </Link>
+            </>
+          )}
         </div>
       )}
     </nav>
