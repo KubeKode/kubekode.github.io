@@ -1,20 +1,21 @@
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Navbar from "./components/Navbar";
+import NewFooter from "./components/NewFooter";
 import Home from "./pages/Home";
 import Courses from "./pages/Courses";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+
 function App() {
   return (
     <Router>
-      <Header />
+      <Navbar />
       <div className="App">
         <Routes>
-          <Route path="/" Component={Home} />
-          <Route path="/courses" Component={Courses} />
+          <Route path="/" element={<Home />} />
+          <Route path="/courses" element={<Courses />} />
         </Routes>
       </div>
-      <Footer />      
+      <NewFooter />
     </Router>
   );
 }
